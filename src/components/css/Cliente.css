@@ -1,0 +1,156 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* input[type=text], select, textarea {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+} */
+
+/* input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+.ContainerCadastro {  
+  padding: 10px;
+  margin-top: 70px;  
+}
+
+.container .txtDescricao{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+  display: flex;
+}
+
+.container .txtEmail{        
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtCNAE{        
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtCNPJ{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtContato{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+
+.container .txtGrauRisco{        
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtCEP{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtEndereco{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtCidade{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtEstado{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;      
+}
+
+.container .txtObservacao{
+  /* height: 40px;  */
+  /* margin: 3px 0; */
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;
+}
+
+.container .comboCPF_CNPJ{
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;
+}
+
+/* .container .div {
+  border-radius: 5px;
+  background-color: #f2f2f2;   
+} */
+
+.tabelaEmpresa{
+  margin-top: '10px';
+  margin-left: '80px';
+  width: 100%;
+}
+@import url("https://use.typekit.net/fez2exv.css");
+
+body {
+  font-family: montserrat,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-right: 5%;
+  margin-left: 2%;
+}
+
+.row{
+  margin-top: 10px;
+}
+
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn:focus{
+  box-shadow: none;
+}
