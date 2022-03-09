@@ -143,7 +143,6 @@ li {
   display: flex;
   width: 100%;
   float: left;
-  border-bottom: 1px dashed lavender;
   position: relative;
   background: #2720E6;
 }

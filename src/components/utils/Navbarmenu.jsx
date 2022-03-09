@@ -2,6 +2,10 @@ import React,{useState} from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import BP_logo from "../img/BP_logo.svg"
+import Home from "../utils/Home.jsx"
+import { Routes, Route } from "react-router-dom";
+import Root from "../cadastros/Root.jsx";
+
 
 
 const Navbarmenu = () => {
@@ -36,6 +40,7 @@ const Navbarmenu = () => {
    
 
     return (
+        <>
     <header className="header__middle">
         <div className="container">
             <div className="row">
@@ -82,7 +87,20 @@ const Navbarmenu = () => {
             </div>
 	    </div>
     </header>
-    )
+        
+    
+
+
+        <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/home" element={<Home/>} /> */}
+        
+
+      </Routes>
+    
+      </>   
+       );
+    
 }
 
-export default Navbarmenu
+export default Navbarmenu;
