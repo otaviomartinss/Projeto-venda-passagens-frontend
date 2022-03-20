@@ -3,8 +3,26 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/home.css"
 
-function Home() {
+
+export const dateMask = (value) => {
+  console.log("Dentro da DATA");
+  return value
+    .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
+    .replace(/(\d{2})(\d)/, "$1/$2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+    .replace(/(\d{2})(\d)/, "$1/$2")
+    .replace(/(\d{4})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
+};
+
+ const Home = (props) => {
+  const [dtIda, setDtIda] = useState("");
+  const [dtVolta, setDtVolta] = useState("");
+ 
+ 
+
+ 
+    
   return (
+    
 <div class="home">
     <div className="pesq" id="pesq">
           <Row id="pesq">
@@ -14,7 +32,7 @@ function Home() {
                     De:
                   </Form.Label>
                   <Form.Control as="select" defaultValue="Selecione...">
-                    <option>Escolha a cidade</option>
+                    <option>Escolha a cidade...</option>
                     <option>Belo Horizonte</option>
                     <option>Rio de Janeiro</option>
                     <option>São Paulo</option>
@@ -28,7 +46,7 @@ function Home() {
                     Para:
                   </Form.Label>
                   <Form.Control as="select" defaultValue="Selecione...">
-                    <option>Escolha a cidade</option>
+                    <option>Escolha a cidade...</option>
                     <option>Belo Horizonte</option>
                     <option>Rio de Janeiro</option>
                     <option>São Paulo</option>
@@ -36,6 +54,29 @@ function Home() {
                   </Form.Control>
                 </div>
               </Col>
+              <Col sm={3}>
+              <div className="txtIda">
+                  <Form.Label className="text-left" style={{ width: "100%" }}>
+                    Data de ida:
+                  </Form.Label>
+                  <Form.Control
+                    value={dtIda}
+                    onChange={(e) => setDtIda(dateMask(e.target.value))}
+                  />
+                </div>
+              </Col>
+              <Col sm={3}>
+              <div className="txtVolta">
+                  <Form.Label className="text-left" style={{ width: "100%" }}>
+                    Data de volta:
+                  </Form.Label>
+                  <Form.Control
+                    value={dtVolta}
+                    onChange={(e) => setDtVolta(dateMask(e.target.value))}
+                  />
+                </div>
+              </Col>
+              
               <Col sm={3}>
              {/*  <FormGroup>
                 <ControlLabel>Label</ControlLabel>
