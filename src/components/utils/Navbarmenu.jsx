@@ -4,7 +4,6 @@ import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import BP_logo from "../img/BP_logo.svg"
 import Home from "../utils/Home.jsx"
 import { Routes, Route } from "react-router-dom";
-import Root from "../cadastros/Root.jsx";
 
 
 
@@ -50,7 +49,7 @@ const Navbarmenu = () => {
                 <div className="header__middle__menus">
                     {/* Add Logo  */}
                 <div className="header__middle__logo">
-                    <NavLink exact activeClassName='is-active' to="/">
+                    <NavLink to="/">
                         <img className='logoh' src={BP_logo} alt="logo" /> 
                     </NavLink>
                 </div>
@@ -68,14 +67,22 @@ const Navbarmenu = () => {
 
                     <ul className={boxClass.join(' ')}>
                     
+                    <li className="menu-item" ><NavLink onClick={toggleClass} to={`/`}> Início </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/About`}> Comprar passagem </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/Contact`}> Minha Conta </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/Contact`}> Suporte </NavLink> </li>
+                    <li className="menu-item " id="sair" ><NavLink onClick={toggleClass} to={`/Contact`}> Sair </NavLink> </li>
+
+                    </ul>
+                    {/* <ul className={boxClass.join(' ')}>
+                    
                     <li className="menu-item" ><NavLink exact activeClassName='is-active' onClick={toggleClass} to={`/`}> Início </NavLink> </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/About`}> Comprar passagem </NavLink> </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Contact`}> Minha Conta </NavLink> </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Contact`}> Suporte </NavLink> </li>
                     <li className="menu-item " id="sair" ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Contact`}> Sair </NavLink> </li>
 
-                    </ul>
-
+                    </ul> */}
 
                     </nav>     
                 </div>   
