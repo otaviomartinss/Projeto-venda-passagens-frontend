@@ -3,6 +3,7 @@ import {NavLink, Link} from 'react-router-dom';
 import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import BP_logo from "../img/BP_logo.svg"
 import Home from "../utils/Home.jsx"
+import Cadastro from "../utils/Cadastro.jsx"
 import { Routes, Route } from "react-router-dom";
 
 
@@ -68,9 +69,8 @@ const Navbarmenu = () => {
                     <ul className={boxClass.join(' ')}>
                     
                     <li className="menu-item" ><NavLink onClick={toggleClass} to={`/`}> Início </NavLink> </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/About`}> Comprar passagem </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/cadastro`}> Cadastrar</NavLink> </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} to={`/Contact`}> Minha Conta </NavLink> </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/Contact`}> Suporte </NavLink> </li>
                     <li className="menu-item " id="sair" ><NavLink onClick={toggleClass} to={`/Contact`}> Sair </NavLink> </li>
 
                     </ul>
@@ -100,6 +100,7 @@ const Navbarmenu = () => {
 
         <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         {/* <Route path="/home" element={<Home/>} /> */}
         
 

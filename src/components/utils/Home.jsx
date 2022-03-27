@@ -7,7 +7,6 @@ import vooCard from "./vooCard.jsx"
 
 export const dateMask = (value) => {
   return value
-    
     .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
     .replace(/(\d{2})(\d)/, "$1/$2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
     .replace(/(\d{2})(\d)/, "$1/$2")
@@ -19,9 +18,8 @@ export const dateMask = (value) => {
   const [paraInput, setDest] = useState("");
   const [dtIda, setDtIda] = useState("");
   const [dtVolta, setDtVolta] = useState("");
-  const [passageiros, setPassa] = useState("");
-  const [voos, setVoos] = useState([])
-  const [de, setDe] = useState([])
+  const [passageiros, setPassa] = useState("1");
+  const [voos, setVoos] = useState([]);
 
 
  
@@ -35,7 +33,7 @@ export const dateMask = (value) => {
     console.log(passageiros); 
   }
 
-  useEffect(() => {
+/*   useEffect(() => {
 
     fetch("http://localhost:5000/api/voos",{
       method: "GET",
@@ -47,14 +45,29 @@ export const dateMask = (value) => {
       .then((data) => {
         setVoos(data)
         console.table(data)
+        
     })
 
-  }, [])
+  }, []) */
     
-  function Pesquisa() {
+  const pesquisa = () =>{
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+      fetch("http://localhost:5000/api/voos", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        setVoos(data)
+        console.table(data)
+        console.log()
+      })
 
-      console.log()
-  };
+    }
+
+
 
   return (
     
@@ -129,24 +142,26 @@ export const dateMask = (value) => {
                   </Form.Control>
                 </div>
               </Col>
-              <Col sm={10}>
+              <Col sm={5}>
                 </Col>
                 <Col sm={2}>
-              <Button onClick={mensagem} size="xl" variant="success" className="btnpesquisar">
+              <Button onClick={pesquisa} size="xl" variant="success" className="btnpesquisar">
                 Pesquisar
               </Button>
               
                 </Col>
 
                 <Col sm={12}>
+                  <div>
+                    <p></p>
+                  </div>
                   
                   
                   
                   
                   
                   
-                  
-                  {/* <Container>
+                   {/* <Container>
                   <div className='voos-disp'>
                       <h2>voos disponíveis</h2>
                     {voos.length > 0 &&
@@ -159,7 +174,6 @@ export const dateMask = (value) => {
                     tempo={voo.tempo}
                     preco={voo.preco}
                     />))}
-                    <vooCard>{de}</vooCard>
                   </div>
                   </Container> */}
                   

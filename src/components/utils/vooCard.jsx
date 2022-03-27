@@ -1,14 +1,12 @@
 import "../css/voo_card.css"
 
-function vooCard({de, para}){
+function vooCard({de, para, cia, hora, tempo, preco}){
 
 
   return (
     <div>
-      <h2>voo</h2>
-      <h3>{de}</h3>
-      <h3>{para}</h3>
-      
+      <h2>voo{de}</h2>
+
     </div>
   
   

@@ -254,3 +254,7 @@ li {
 .menu-item .sub__menus__full a {text-align: left;}
 
 }
+
+nav.main-nav{
+  width: 60%;
+}
