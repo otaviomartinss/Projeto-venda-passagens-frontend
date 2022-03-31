@@ -34,7 +34,7 @@ export const telMask = (value) => {
     .replace(/(-\d{4})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
 };
 
- const Home = (props) => {
+ const Cadastro = (props) => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");  
   const [cep, setCep] = useState("");
@@ -43,6 +43,8 @@ export const telMask = (value) => {
   const [dtNasc, setDtNasc] = useState("");
   const [whats, setWhats] = useState("");
   const [sexo, setSexo] = useState("");
+  const [senha, setSenha] = useState("");
+
   
 
 
@@ -92,12 +94,12 @@ export const telMask = (value) => {
         clientewhats: whats,
         clienteCep: cep,
         clienteEndereco: endereco,
+        clienteSenha: senha,
       }),
     };
       fetch("http://localhost:5000/api/clientes", requestOptions)
       .then((response) => response.json())
       .then((data) => { console.table(data)})
-
     }
 
 
@@ -110,7 +112,7 @@ export const telMask = (value) => {
           <Col sm={12}>
               <h4 className='cad'>Cadastrar</h4>
             </Col>
-            <Col sm={4}>
+            <Col sm={3}>
               <div className="txtNome">
                   <Form.Label className="text-left" style={{ width: "100%" }}>
                   </Form.Label>
@@ -121,7 +123,7 @@ export const telMask = (value) => {
                   />
                 </div>
               </Col>
-              <Col sm={4}>
+              <Col sm={3}>
               <div className="txtEmail">
                   <Form.Label className="text-left" style={{ width: "100%" }}>
                   </Form.Label>
@@ -129,6 +131,19 @@ export const telMask = (value) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
+                    type="email"
+                  />
+                </div>
+              </Col>
+              <Col sm={2}>
+              <div className="txtSenha">
+                  <Form.Label  className="text-left" style={{ width: "100%" }}>
+                  </Form.Label>
+                  <Form.Control
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    placeholder="Senha"
+                    type="password"
                   />
                 </div>
               </Col>
@@ -199,77 +214,8 @@ export const telMask = (value) => {
                   />
                 </div>
               </Col>
-                
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        {/* <Col sm={3}>
-                <div className="deLocal">
-                  <Form.Label className="text-left">
-                    de:
-                  </Form.Label>
-                  <Form.Control as="select" value={deInput} onChange={(e) => setSaida(e.target.value)}>
-                    <option>Escolha a cidade...</option>
-                    <option>Belo Horizonte</option>
-                    <option>Rio de Janeiro</option>
-                    <option>São Paulo</option>
-                    <option>Uberlândia</option>
-                  </Form.Control>
-                </div>
+              <Col sm={5}>
               </Col>
-              <Col sm={3}>
-                <div className="paraLocal">
-                  <Form.Label className="text-left" >
-                    Para:
-                  </Form.Label>
-                  <Form.Control as="select" value={paraInput} onChange={(e) => setDest(e.target.value)}>
-                    <option>Escolha a cidade...</option>
-                    <option>Belo Horizonte</option>
-                    <option>Rio de Janeiro</option>
-                    <option>São Paulo</option>
-                    <option>Uberlândia</option>
-                  </Form.Control>
-                </div>
-              </Col>
-              
-              <Col sm={2}>
-              <div className="txtVolta">
-                  <Form.Label className="text-left" style={{ width: "100%" }}>
-                    Data de volta:
-                  </Form.Label>
-                  <Form.Control
-                    value={dtVolta}
-                    onChange={(e) => setDtVolta(dateMask(e.target.value))}
-                    placeholder="__/__/____"
-                  />
-                </div>
-              </Col>
-              <Col sm={2}>
-                <div className="passageiros">
-                  <Form.Label className="text-left" >
-                    Passageiros:
-                  </Form.Label>
-                  <Form.Control as="select" value={passageiros} onChange={(e) => setPassa(e.target.value)}>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                  </Form.Control>
-                </div>
-              </Col>
-              <Col sm={10}>
-                </Col> */}
-                <Col sm={5}>
-                </Col>
                 <Col sm={2}>
               <Button onClick={() => cadastrar()} size="xl" variant="success" className="btnpesquisar">
                 Cadastrar
@@ -312,4 +258,4 @@ export const telMask = (value) => {
   );
 };
 
-export default Home;
+export default Cadastro

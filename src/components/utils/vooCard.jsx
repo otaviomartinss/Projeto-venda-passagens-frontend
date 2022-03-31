@@ -1,12 +1,11 @@
 import "../css/voo_card.css"
+import React,{useState, useEffect} from 'react';
+import { Form, Col, Row, Button, Container } from "react-bootstrap";
 
-function vooCard({de, para, cia, hora, tempo, preco}){
-
-
+function vooCard(){
   return (
     <div>
-      <h2>voo{de}</h2>
-
+      <h2>voo</h2>
     </div>
   
   

@@ -5,6 +5,7 @@ import BP_logo from "../img/BP_logo.svg"
 import Home from "../utils/Home.jsx"
 import Cadastro from "../utils/Cadastro.jsx"
 import { Routes, Route } from "react-router-dom";
+import Login from './Login';
 
 
 
@@ -69,6 +70,7 @@ const Navbarmenu = () => {
                     <ul className={boxClass.join(' ')}>
                     
                     <li className="menu-item" ><NavLink onClick={toggleClass} to={`/`}> Início </NavLink> </li>
+                    <li className="menu-item " ><NavLink onClick={toggleClass} to={`/login`}> Login</NavLink> </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} to={`/cadastro`}> Cadastrar</NavLink> </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} to={`/Contact`}> Minha Conta </NavLink> </li>
                     <li className="menu-item " id="sair" ><NavLink onClick={toggleClass} to={`/Contact`}> Sair </NavLink> </li>
@@ -101,6 +103,7 @@ const Navbarmenu = () => {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/login" element={<Login />} />
         {/* <Route path="/home" element={<Home/>} /> */}
         
 

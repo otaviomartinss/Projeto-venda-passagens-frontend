@@ -48,9 +48,9 @@ export const dateMask = (value) => {
         
     })
 
-  }, []) */
-    
-  const pesquisa = () =>{
+  }, []) 
+  */
+    const pesquisas = () =>{
     const requestOptions = {
       method: "GET",
       headers: {
@@ -66,6 +66,29 @@ export const dateMask = (value) => {
       })
 
     }
+  
+  
+  
+  
+    
+  const pesquisa = async() => {
+    console.log("Estou no botão")
+    console.log(deInput)
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    console.log(requestOptions)
+    fetch("http://localhost:5000/api/voos/" + deInput)
+    .then((response) => response.json())
+    .then((data) => { console.table(data)})
+    .catch((error) => {
+      console.log(error)
+    })
+
+    }
 
 
 
@@ -79,7 +102,7 @@ export const dateMask = (value) => {
                   <Form.Label className="text-left">
                     De:
                   </Form.Label>
-                  <Form.Control as="select" value={deInput} onChange={(e) => setSaida(e.target.value)}>
+                  <Form.Control as="select" value={deInput} onChange={(e) => setSaida(e.target.value) }>
                     <option>Escolha a cidade...</option>
                     <option>Belo Horizonte</option>
                     <option>Rio de Janeiro</option>
@@ -153,7 +176,7 @@ export const dateMask = (value) => {
 
                 <Col sm={12}>
                   <div>
-                    <p></p>
+                    {/* <vooCard></vooCard> */}
                   </div>
                   
                   
