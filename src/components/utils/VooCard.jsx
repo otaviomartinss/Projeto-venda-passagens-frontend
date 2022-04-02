@@ -25,13 +25,6 @@ const VooCard = ({idvoo, devoo, paravoo, ciavoo, horavoo, tempovoo, precovoo, da
   return (
     <div className="card">
       <Row>
-        {/* <Col sm={1}>
-        <label className="check">
-        <input
-          type="checkbox"
-        />
-      </label>
-        </Col> */}
         <Col sm={2} id="infos">
         <h1>voo saindo de:</h1>
         <h2>{devoo}</h2>
@@ -59,8 +52,8 @@ const VooCard = ({idvoo, devoo, paravoo, ciavoo, horavoo, tempovoo, precovoo, da
         <Col sm={5}></Col>
         <Col sm={2} id="esp">
         <Button onClick={comprar} size="xl" variant="success" className="btnpesquisar">
-                Comprar
-              </Button>
+          Comprar
+        </Button>
         </Col>
       </Row>
     </div>

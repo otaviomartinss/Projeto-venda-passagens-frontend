@@ -6,32 +6,32 @@ import "../css/cadastro.css"
 
 export const dateMask = (value) => {
   return value
-    .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
-    .replace(/(\d{2})(\d)/, "$1/$2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+    .replace(/\D/g, "")
     .replace(/(\d{2})(\d)/, "$1/$2")
-    .replace(/(\d{4})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
+    .replace(/(\d{2})(\d)/, "$1/$2")
+    .replace(/(\d{4})\d+?$/, "$1");
 };
 export const cpfMask = (value) => {
   return value
-    .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
-    .replace(/(\d{3})(\d)/, "$1.$2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+    .replace(/\D/g, "")
+    .replace(/(\d{3})(\d)/, "$1.$2")
     .replace(/(\d{3})(\d)/, "$1.$2")
     .replace(/(\d{3})(\d{1,2})/, "$1-$2")
-    .replace(/(-\d{2})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
+    .replace(/(-\d{2})\d+?$/, "$1");
 };
 export const cepMask = (value) => {
   return value
-    .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
-    .replace(/(\d{2})(\d)/, "$1.$2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+    .replace(/\D/g, "") 
+    .replace(/(\d{2})(\d)/, "$1.$2") 
     .replace(/(\d{3})(\d)/, "$1-$2")
-    .replace(/(-\d{3})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
+    .replace(/(-\d{3})\d+?$/, "$1");
 };
 export const telMask = (value) => {
   return value
-    .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
-    .replace(/(\d{2})(\d)/, "($1) $2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+    .replace(/\D/g, "") 
+    .replace(/(\d{2})(\d)/, "($1) $2")
     .replace(/(\d{5})(\d)/, "$1-$2")
-    .replace(/(-\d{4})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
+    .replace(/(-\d{4})\d+?$/, "$1");
 };
 
  const Cadastro = (props) => {
@@ -44,10 +44,6 @@ export const telMask = (value) => {
   const [whats, setWhats] = useState("");
   const [sexo, setSexo] = useState("");
   const [senha, setSenha] = useState("");
-
-  
-
-
  
   function mensagem(e) {
     console.log("#### Dados Recebidos ###");
@@ -220,36 +216,6 @@ export const telMask = (value) => {
               <Button onClick={() => cadastrar()} size="xl" variant="success" className="btnpesquisar">
                 Cadastrar
               </Button>
-              
-                </Col>
-
-                <Col sm={12}>
-                  <div>
-                    <p></p>
-                  </div>
-                  
-                  
-                  
-                  
-                  
-                  
-                   {/* <Container>
-                  <div className='voos-disp'>
-                      <h2>voos disponíveis</h2>
-                    {voos.length > 0 &&
-                    voos.map((voo) => (
-                    <vooCard
-                    de={voo.de}
-                    para={voo.para}
-                    cia={voo.cia}
-                    hora={voo.hora}
-                    tempo={voo.tempo}
-                    preco={voo.preco}
-                    />))}
-                  </div>
-                  </Container> */}
-                  
-                
                 </Col>
               </Row>
 

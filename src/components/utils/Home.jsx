@@ -7,10 +7,10 @@ import VooCard from "./VooCard.jsx"
 
 export const dateMask = (value) => {
   return value
-    .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
-    .replace(/(\d{2})(\d)/, "$1/$2") // captura 2 grupos de numero o primeiro de 3 e o segundo de 1, apos capturar o primeiro grupo ele adiciona um ponto antes do segundo grupo de numero
+    .replace(/\D/g, "")
     .replace(/(\d{2})(\d)/, "$1/$2")
-    .replace(/(\d{4})\d+?$/, "$1"); // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
+    .replace(/(\d{2})(\d)/, "$1/$2")
+    .replace(/(\d{4})\d+?$/, "$1");
 };
 
  const Home = (props) => {
@@ -22,8 +22,6 @@ export const dateMask = (value) => {
   const [voos, setVoos] = useState("");
   const [dados, setDados] = useState([]);
 
-
- 
   function mensagem(e) {
     console.log("#### Dados Recebidos ###");
 
@@ -67,11 +65,7 @@ export const dateMask = (value) => {
       })
 
     }
-  
-  
-  
-  
-    
+
   const pesquisa = async() => {
     const requestOptions = {
       method: "GET",
@@ -190,28 +184,6 @@ export const dateMask = (value) => {
                     datavolta={dtVolta}
                     ></VooCard>))}
                   
-                  
-                  
-                  
-                  
-                  
-                   {/* <Container>
-                  <div className='voos-disp'>
-                      <h2>voos disponíveis</h2>
-                    {voos.length > 0 &&
-                    voos.map((voo) => (
-                    <vooCard
-                    de={voo.de}
-                    para={voo.para}
-                    cia={voo.cia}
-                    hora={voo.hora}
-                    tempo={voo.tempo}
-                    preco={voo.preco}
-                    />))}
-                  </div>
-                  </Container> */}
-                  
-                
                 </Col>
               </Row>
 
