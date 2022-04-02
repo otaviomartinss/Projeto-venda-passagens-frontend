@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { Form, Col, Row, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/home.css"
-import vooCard from "./vooCard.jsx"
+import VooCard from "./VooCard.jsx"
 
 
 export const dateMask = (value) => {
@@ -19,7 +19,8 @@ export const dateMask = (value) => {
   const [dtIda, setDtIda] = useState("");
   const [dtVolta, setDtVolta] = useState("");
   const [passageiros, setPassa] = useState("1");
-  const [voos, setVoos] = useState([]);
+  const [voos, setVoos] = useState("");
+  const [dados, setDados] = useState([]);
 
 
  
@@ -50,7 +51,7 @@ export const dateMask = (value) => {
 
   }, []) 
   */
-    const pesquisas = () =>{
+    const pesquisaTodos = () =>{
     const requestOptions = {
       method: "GET",
       headers: {
@@ -72,25 +73,25 @@ export const dateMask = (value) => {
   
     
   const pesquisa = async() => {
-    console.log("Estou no botão")
-    console.log(deInput)
     const requestOptions = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    console.log(requestOptions)
-    fetch("http://localhost:5000/api/voos/" + deInput)
+    //console.log(requestOptions)
+    fetch("http://localhost:5000/api/voos/" + deInput +"/"+ paraInput)
     .then((response) => response.json())
-    .then((data) => { console.table(data)})
+    .then((data) => {
+      setVoos(data)
+      console.table(data)
+    })
+    
     .catch((error) => {
       console.log(error)
     })
 
     }
-
-
 
   return (
     
@@ -175,9 +176,19 @@ export const dateMask = (value) => {
                 </Col>
 
                 <Col sm={12}>
-                  <div>
-                    {/* <vooCard></vooCard> */}
-                  </div>
+                    {voos.length > 0 &&
+                    voos.map((voo) => (
+                    <VooCard
+                    idvoo={voo.id}
+                    devoo={voo.de}
+                    paravoo={voo.para}
+                    ciavoo={voo.cia}
+                    horavoo={voo.hora}
+                    tempovoo={voo.tempo}
+                    precovoo={voo.preco}
+                    dataida={dtIda}
+                    datavolta={dtVolta}
+                    ></VooCard>))}
                   
                   
                   
