@@ -1,4 +1,5 @@
-projeto-venda-passagens-frontend
+# projeto-venda-passagens-frontend
+
 Projeto frontend de uma aplicação de venda de passagens para as matérias de ASA e TWM na UFU
 
 Cadastro de usuário, comunicação com o banco de dados rodando em uma instância ec2 na aws, pesquisa de voos, listagem de voos disponíveis, compra de passagem, comunicação com o front-end construído em Node js
